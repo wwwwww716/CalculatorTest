@@ -2,37 +2,43 @@ package calculator;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Before;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
 
-	
-	@Test
-	void add() {
-		Calculator cal = new Calculator();
-		int result  = cal.add(2,1);
-		assertEquals(3, result);
-	}
+	    Calculator cal;
 
-	@Test
-	void subtract() {
-		Calculator cal = new Calculator();
-		int result = cal.subtract(2, 1);
-		assertEquals(1, result);
-	}
+	    @BeforeEach
+	    public void setUp()  {
+	        cal = new Calculator();
+	    }
 
-	@Test
-	void mutiply() {
-		Calculator cal = new Calculator();
-		int result = cal.multiply(4, 2);
-		assertEquals(8, result);
-	}
+	    @Test
+	    public void 덧셈()  {
+	        assertEquals(7, cal.add(3, 4));
+	    }
 
-	@Test
-	void divide() {
-		Calculator cal = new Calculator();
-		int result = cal.divide(3, 2);
-		assertEquals(1, result);
-	}
+	    @Test
+	    public void 뺄셈()  {
+	        assertEquals(1, cal.subtract(5,  4));
+	    }
+
+	    @Test
+	    public void 곱셉()  {
+	        assertEquals(6, cal.multiply(2, 3));
+	    }
+
+	    @Test
+	    public void 나눗셈()  {
+	        assertEquals(2, cal.divide(8, 4));
+	    }
+
+	    @AfterEach
+	    public void tearDown() {
+	        cal = null;
+	    }
 }
