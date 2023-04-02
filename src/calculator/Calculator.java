@@ -1,4 +1,4 @@
-package mathTest;
+package calculator;
 
 public class Calculator {
 	
