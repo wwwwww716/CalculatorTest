@@ -10,35 +10,26 @@ import org.junit.jupiter.api.Test;
 
 public class CalculatorTest {
 
-	    Calculator cal;
-
-	    @BeforeEach
-	    public void setUp()  {
-	        cal = new Calculator();
-	    }
-
-	    @Test
-	    public void 덧셈()  {
-	        assertEquals(7, cal.add(3, 4));
-	    }
-
-	    @Test
-	    public void 뺄셈()  {
-	        assertEquals(1, cal.subtract(5,  4));
-	    }
-
-	    @Test
-	    public void 곱셉()  {
-	        assertEquals(6, cal.multiply(2, 3));
-	    }
-
-	    @Test
-	    public void 나눗셈()  {
-	        assertEquals(2, cal.divide(8, 4));
-	    }
-
-	    @AfterEach
-	    public void tearDown() {
-	        cal = null;
-	    }
+    @BeforeEach
+    public void setup() {
+      System.out.println("setup");
+    }
+    
+    @Test
+    public void test1() throws Exception {
+      System.out.println("test1");		
+    }
+    
+    @Test
+    public void test2() throws Exception {
+      System.out.println("test2");		
+    }
+    
+    @AfterEach
+    public void teardown() {
+      System.out.println("teardown");		
+    }
+    
+    // BeforEach 실행 -> Test 실행 -> After Each 실행 반복 
+    // Test 실행 순서는 위에서 부터 실행 
 }
